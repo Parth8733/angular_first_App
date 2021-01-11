@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'
+import {Component, ɵbypassSanitizationTrustResourceUrl} from '@angular/core'
 import { CoursesService } from './courses.service';
 
 @Component({
@@ -16,12 +16,14 @@ import { CoursesService } from './courses.service';
                 <td [attr.colspan]="colSpan"></td>
             </tr>
         </table>
+        <button class ="btn btn-primary" [class.active] = "isActive">Save</button>
      `
 })
 export class CoursesComponent {
     title = "List of Courses";
     imageUrl = "https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/angular/tutorials/angular/6/img/03.png"
     colSpan = 2;
+    isActive = false;
     course;
     
 
